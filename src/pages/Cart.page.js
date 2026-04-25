@@ -4,16 +4,13 @@ class CartPage {
   }
 
   async clickCart() {
-     const cartBtn = await this.page.locator('[routerlink="/dashboard/cart"]');
-
-    await cartBtn.waitFor({ state: 'visible', timeout: 60000 });
-    await cartBtn.click();
-
+     const cartBtn = await this.page.click('[routerlink="/dashboard/cart"]');
+    
   }
 
   async continueShopping() {
-    const continuebutton = await this.page.locator('button[type="button"]');
-    await continuebutton.click();
+    const continuebutton = await this.page.click('button[type="button"]');
+  
   }
 }
 
