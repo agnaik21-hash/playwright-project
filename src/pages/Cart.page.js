@@ -4,7 +4,8 @@ class CartPage {
   }
 
   async clickCart() {
-    await this.page.click('button:has(i.fa-shopping-cart)');
+    await page.waitForSelector('button', { state: 'visible' });
+    await page.locator('button:has(i.fa-shopping-cart)').click();
   }
 
   async continueShopping() {
