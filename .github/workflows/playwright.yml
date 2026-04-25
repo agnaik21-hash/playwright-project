@@ -2,11 +2,9 @@ name: Playwright Cucumber Tests
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   test:
@@ -22,15 +20,15 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
-
-      - name: Install Playwright
-        run: |
-         npx playwright install
-         npx playwright install-deps
+        run: npm ci
 
       - name: Install Playwright Browsers
-        run: npx playwright install chromium
+        run: |
+          npx playwright install
+          npx playwright install-deps
+
+      - name: Fix Playwright Permission
+        run: chmod -R 755 node_modules
 
       - name: Run Cucumber Tests
         run: npx cucumber-js
@@ -38,8 +36,8 @@ jobs:
       - name: Generate Allure Report
         run: npm run allure:generate || true
 
-      - name: Upload Allure Results
+      - name: Upload Allure Report
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results
-          path: allure-results
+          name: allure-report
+          path: allure-report
