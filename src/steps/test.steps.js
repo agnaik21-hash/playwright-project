@@ -5,6 +5,7 @@ const{CartPage} =require('../pages/Cart.page');
 const {getPage } = require('../fixtures/testContext');
 
 let loginPage; 
+let cartPage;
 
 // Login page
 
@@ -27,7 +28,7 @@ Then('I should see the home page', async function (){});
 //Cart Dashboard page
 When('I click on the Cart button', async function () {
   const page = getPage();
-  cartPage = new CartPage(page);
+  cartPage = new CartPage(this.page);
   await cartPage.clickCart();
 });
 
