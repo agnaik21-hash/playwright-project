@@ -4,7 +4,7 @@ class CartPage {
   }
 
   async clickCart() {
-     const cartBtn = this.page.getByRole('button', { name: /cart/i });
+     const cartBtn = this.page.locator('[routerlink="/dashboard/cart"]');
 
     await cartBtn.waitFor({ state: 'visible', timeout: 60000 });
     await cartBtn.click();

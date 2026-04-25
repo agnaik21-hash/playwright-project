@@ -28,11 +28,11 @@ Then('I should see the home page', async function (){});
 When('I click on the Cart button', async function () {
   const page = getPage();
   cartPage = new CartPage(page);
-  await this.cartPage.clickCart();
+  await cartPage.clickCart();
 });
 
 Then('click on continue shopping button', async function () {
-  await this.cartPage.continueShopping();
+  await cartPage.continueShopping();
 });
 
 
