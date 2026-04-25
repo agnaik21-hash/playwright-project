@@ -29,6 +29,9 @@ jobs:
          npx playwright install
          npx playwright install-deps
 
+      - name: Install Playwright Browsers
+        run: npx playwright install chromium
+
       - name: Run Cucumber Tests
         run: npx cucumber-js
 
