@@ -23,11 +23,15 @@ When('I enter valid credentials', async function () {
   );
 });
 
-Then('I should see the home page', async function (){});
+Then('I should see the home page', async function (){
+    await this.page.waitForLoadState('networkidle');
+});
+
+
 
 //Cart Dashboard page
 When('I click on the Cart button', async function () {
-  const page = getPage();
+
   cartPage = new CartPage(this.page);
   await cartPage.clickCart();
 });
