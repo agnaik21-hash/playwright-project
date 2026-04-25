@@ -50,6 +50,7 @@ Before({ tags: '@noauth' }, async function () {
   this.page = await this.context.newPage();
 
   await this.page.goto(process.env.URL);
+  await this.page.waitForLoadState('domcontentloaded');
 
   setPage(this.page); // keep this if you're still using testContext
 });
