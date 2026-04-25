@@ -4,7 +4,7 @@ class CartPage {
   }
 
   async clickCart() {
-    await this.page.click('button i.fa-shopping-cart');
+    await this.page.click('button:has(i.fa-shopping-cart)');
   }
 
   async continueShopping() {
