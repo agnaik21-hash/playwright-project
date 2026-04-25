@@ -4,7 +4,8 @@ class CartPage {
   }
 
   async clickCart() {
-    const cartButton = this.page.locator('//ul/li[4]/button');
+    const cartButton = this.page.click('//ul/li[4]/button');
+
   }
 
   async continueShopping() {
