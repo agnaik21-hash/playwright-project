@@ -4,12 +4,14 @@ class CartPage {
   }
 
   async clickCart() {
-    const cartButton = this.page.click('//ul/li[4]/button');
+    const cartButton = await this.page.locator('//ul/li[4]/button');
+    await cartButton.click();
 
   }
 
   async continueShopping() {
-    const continuebutton = await this.page.click('button[type="button"]');
+    const continuebutton = await this.page.locator('button[type="button"]');
+    await continuebutton.click();
   }
 }
 
