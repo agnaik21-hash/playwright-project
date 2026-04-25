@@ -7,7 +7,7 @@ dotenv.config();
 setDefaultTimeout(60 * 1000);
 
 Before({ tags: '@auth' }, async function () {
-  this.browser = await chromium.launch({ headless: false });
+  this.browser = await chromium.launch({ headless: true });
 
   // 1. Create API context (correct usage)
   const apiContext = await request.newContext();
@@ -19,9 +19,7 @@ Before({ tags: '@auth' }, async function () {
       data: {
         userEmail: process.env.USER,
         userPassword: process.env.PASS
-      }
-    }
-  );
+      }});
 
   // 🔍 Debug (remove later)
   const text = await response.text();
