@@ -24,7 +24,13 @@ When('I enter valid credentials', async function () {
 });
 
 Then('I should see the home page', async function (){
-    await this.page.waitForLoadState('networkidle');
+    Then('I should see the home page', async function () {
+  await expect(this.page).toHaveURL(/dashboard/);
+
+  await expect(
+    this.page.locator('a[routerlink="/dashboard/cart"]')
+  ).toBeVisible();
+});
 });
 
 
