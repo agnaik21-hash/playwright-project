@@ -8,7 +8,7 @@ class CartPage {
   }
 
   async continueShopping() {
-    await this.page.click('[type=button]');
+    await this.page.click('.btn-primary');
   }
 }
 
