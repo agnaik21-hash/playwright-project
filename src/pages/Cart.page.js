@@ -4,13 +4,13 @@ class CartPage {
   }
 
   async clickCart() {
-    const cartButton = this.page.locator('//ul/li[4]/button');
+    const cartButton = await this.page.getByRole('button', { name: 'Cart' });
     await cartButton.click();
 
   }
 
   async continueShopping() {
-    const continuebutton = await page.locator('button[type="button"]');
+    const continuebutton = await this.page.locator('button[type="button"]');
     await continuebutton.click();
   }
 }
