@@ -25,8 +25,10 @@ When('I enter valid credentials', async function () {
 
 Then('I should see the home page', async function (){});
 
+
+
 //Cart Dashboard page
-When('I click on the Cart button',{ timeout: 120000 }, async function () {
+When('I click on the Cart button', async function () {
 
   cartPage = new CartPage(this.page);
   await cartPage.clickCart();
